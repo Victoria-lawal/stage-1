@@ -1,3 +1,7 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -10,6 +14,9 @@ from app.models import Profile
 from app.crud import get_by_name, create, get_by_id, get_all, delete
 from app.services.external_apis import fetch_data, validate
 from app.utils.classification import get_age_group
+
+
+from mangum import Mangum
 
 app = FastAPI()
 init_db()
@@ -195,6 +202,5 @@ def delete_profile(id: str, session: Session = Depends(get_session)):
     delete(session, profile)
     return
 
-from mangum import Mangum
 
 handler = Mangum(app)

@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 sqlmodel
+sqlalchemy
 httpx
 pydantic
 psycopg2-binary
