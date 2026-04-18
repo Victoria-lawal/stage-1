@@ -1,7 +1,8 @@
 from sqlmodel import SQLModel, Field
 from datetime import datetime, timezone
-from uuid6 import uuid7
 import uuid
+from uuid6 import uuid7
+
 
 
 def utc_now():
