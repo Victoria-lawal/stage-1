@@ -53,6 +53,9 @@ Local Setup
 3. Open http://127.0.0.1:8000/docs
 
 
-git remote add origin https://github.com/Victoria-lawal/stage-1
+git init
+git add .
+git commit -m "stage 1 api ready"
 git branch -M main
+git remote add origin  https://github.com/Victoria-lawal/stage-1
 git push -u origin main
