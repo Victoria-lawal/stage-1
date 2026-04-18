@@ -194,3 +194,7 @@ def delete_profile(id: str, session: Session = Depends(get_session)):
 
     delete(session, profile)
     return
+
+from mangum import Mangum
+
+handler = Mangum(app)
