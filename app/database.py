@@ -1,13 +1,13 @@
 import os
-from sqlmodel import create_engine
+from sqlmodel import create_engine, SQLModel
 from dotenv import load_dotenv
-from sqlmodel import SQLModel
-from app.database import engine
-from app.models import Profile
 
-load_dotenv()  # 👈 THIS IS THE FIX
+load_dotenv()  
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL is not set")
 
 engine = create_engine(DATABASE_URL, echo=True)
 def init_db():
