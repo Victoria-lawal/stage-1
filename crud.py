@@ -1,5 +1,5 @@
 from sqlmodel import select
-from app.models import Profile
+from models import Profile
 
 def get_profile_by_name(session, name):
     statement = select(Profile).where(Profile.name == name)

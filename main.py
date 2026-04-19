@@ -2,15 +2,13 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from sqlmodel import SQLModel, Session
-from app.db import engine, get_session
-from app.schemas import CreateProfileRequest
-from app import crud, services, utils
-from app.models import Profile
 
-from contextlib import asynccontextmanager
-from fastapi import FastAPI
-from sqlmodel import SQLModel
-from app.db import engine
+from db import engine, get_session
+from schemas import CreateProfileRequest
+import crud
+import services
+import utils
+from models import Profile
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
