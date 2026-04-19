@@ -1,3 +1,14 @@
+# environment
 venv/
-__pycache__/
 .env
+
+# python cache
+__pycache__/
+*.pyc
+
+# database
+stage1.db
+
+# IDE
+.vscode/
+.idea/
